@@ -1,3 +1,46 @@
 /*--------------------------------------------------------------
-# Embedded Fonts
+# Embedded ../../fonts
 --------------------------------------------------------------*/
+@font-face {
+    font-family: 'Exo';
+    src: url('../../fonts/Exo-LightItalic.eot');
+    src: url('../../fonts/Exo-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Exo-LightItalic.woff2') format('woff2'),
+        url('../../fonts/Exo-LightItalic.woff') format('woff'),
+        url('../../fonts/Exo-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../../fonts/exo-medium-webfont.eot');
+    src: url('../../fonts/exo-medium-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/exo-medium-webfont.woff2') format('woff2'),
+        url('../../fonts/exo-medium-webfont.woff') format('woff'),
+        url('../../fonts/exo-medium-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../../fonts/exo-light-webfont.eot');
+    src: url('../../fonts/exo-light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/exo-light-webfont.woff2') format('woff2'),
+        url('../../fonts/exo-light-webfont.woff') format('woff'),
+        url('../../fonts/exo-light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../../fonts/exo-medium-webfontItalic.eot');
+    src: url('../../fonts/exo-medium-webfontItalic.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/exo-medium-webfontItalic.woff2') format('woff2'),
+        url('../../fonts/exo-medium-webfontItalic.woff') format('woff'),
+        url('../../fonts/exo-medium-webfontItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}

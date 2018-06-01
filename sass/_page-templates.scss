@@ -4,4 +4,156 @@
 
 /* All Archives Page */
 
+body{
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'exo', sans-serif;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1080px;
+    width: 100%;
+    padding: 2.5%;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+a, a:visited{
+    color: #00cc00;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #008200;
+}
+
+
+
+
+// Nav Footer ========================
+
+.logo img{
+    width: 300px;
+    height: auto;
+    @include tablet{
+        width: 500px;
+    }
+    @include desktop{
+        width: 700px;
+    }
+}
+
+
+.entry-content{
+    p{
+        font-size: 1.25rem;
+        font-weight: 300;
+        @include tablet{
+            font-size: 1.5rem;
+        }
+        @include desktop{
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.entry-title{
+        font-weight: 300;
+}
+
+.site-info{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4.5rem 0 3rem;
+
+    @include desktop{
+        justify-content: flex-end;
+    }
+}
+
+button{
+    background: #222;
+    color: #00cc00;
+    border: 2px solid #00cc00;
+    padding: .75rem 2.25rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-family: 'exo', sans-serif;
+}
+
+button:hover{
+    color: #008200;
+    border: 2px solid #008200;
+}
+
+.footer-navigation ul{
+    display: flex;
+    list-style-type: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.footer-navigation li{
+    padding: 0 1rem;
+}
+
+.page-item-113{
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    padding: 0 1rem;
+}
+
+
+/* Archives Page */
+
+.page .entry-title{
+    font-size: 2em;
+}
+
+.post-archives ul, 
+.category-archives ul,
+.tag-archives ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.post-archives li,
+.category-archives li,
+.tag-archives li {
+    text-align: left;    
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    margin-right: 1.125rem;
+}
+
 /* Submit a Quote Page */
+
+
+#quote-submission-form label{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#quote-submission-form input, #quote-submission-form textarea{
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #00cc00;
+    font-family: 'exo';
+}
+
+#quote-content{
+    max-width: 450px;
+}
+
+#quote-source-url{
+    margin-bottom: 15px;
+}

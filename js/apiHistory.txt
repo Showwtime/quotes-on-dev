@@ -1,0 +1,24 @@
+getting URL to change when button is clicked, and creating a history log of the last quotes
+
+
+
+
+
+
+// create variable
+var lastPage = "";
+
+// button click update the last page before ajax request
+lastPage = document.URL;
+
+// inside the .done method update the URL
+history.pushState(null, null, data[0].slug);
+
+/**
+* window pop state, back or forward button pressed
+* after & outside of the click event
+*/
+
+$(window).on("popstate", function(){
+    window.location.replace(lastPage);
+});
