@@ -1,68 +1,65 @@
 (function($) {
   'use strict';
 
-
   /**
    * Ajax-based random post fetching & History API
    */
-  $('#new-quote-button').on('click', function(event){
+  $('#new-quote-button').on('click', function(event) {
     event.preventDefault();
-    // console.log('click');
 
-    // console.log(api_vars.root_url);
-    // write ajax here
-      $.ajax({
-        method: 'get',
-        url: api_vars.root_url + 'wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1' ,
-        cache: false
-    }).done(function(data){
+    $.ajax({
+      method: 'get',
+      url:
+        api_vars.root_url +
+        'wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+      cache: false
+    })
+      .done(function(data) {
+        var quoteObj = data[0];
+        var quoteContent = quoteObj.content.rendered;
+        var quoteTitle = quoteObj.title.rendered;
+        var quoteUrl = quoteObj._qod_quote_source_url;
+        var quoteSource = quoteObj._qod_quote_source;
 
-      var quoteObj = data[0];
-      var quoteContent = quoteObj.content.rendered;
-      var quoteTitle = quoteObj.title.rendered;
-      var quoteUrl = quoteObj._qod_quote_source_url;
-      var quoteSource = quoteObj._qod_quote_source;
+        var quoteLink = '<a href="' + quoteUrl + '">' + quoteSource + '</a>';
 
-      var quoteLink = '<a href="' + quoteUrl + '">' + quoteSource + '</a>';
-      
-      $('.entry-content').html(quoteContent);
-      $('.entry-title').html(quoteTitle);
-      $('.source').html(quoteLink);
+        $('.entry-content').html(quoteContent);
+        $('.entry-title').html(quoteTitle);
+        $('.source').html(quoteLink);
+      })
+      .fail(function() {
+        $('.site-main').html('There was an error, please try again!');
+      });
+  }); // end of .on click
 
-      // append the data to html, look at content.php in template parts
-      // 
-      // change to be the target e.g. look at .entry-meta in dev-tools there are .entry-title and .source
-      // $('.entry-content').html(quoteContent);
+  $('#quote-submission-form').on('submit', function(event) {
+    event.preventDefault();
 
-    }).fail(function(){
-      // some message for the user saying there was an error
-    });
- });// end of .on click
+    $.ajax({
+      method: 'post',
+      url: api_vars.root_url + 'wp/v2/posts',
+      data: {
+        title: $('#quote-author').val(),
+        content: $('#quote-content').val(),
+        source: $('#quote-source').val(),
+        sourceUrl: $('#quote-source-url').val()
+      },
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+      }
+    })
+      .done(function() {
+        $('#quote-submission-form').slideUp('slow');
+        $('.quote-submission').append(
+          'Your quote has been submitted. Thank you!'
+        );
+      })
+      .fail(function() {
+        $('#quote-submission-form').append(
+          'There was an error submitting your quote, please try again!'
+        );
+      });
+  });
 
-  /**
-   * Ajax-based front-end post submissions.
-   */
-    // in the wp javascript slides for post requests.
 })(jQuery);
 
-// create variable
-// var lastPage = "";
-//   $(history-button).on("click", function(event){
-//     event.preventDefault();
-
-// button click update the last page before ajax request
-// lastPage = document.URL;
-// console.log(lastPage);
-
-// inside the .done method update the URL
-// history.pushState(null, null, data[0].slug);
-//   });
-
-/**
-* window pop state, back or forward button pressed
-* after & outside of the click event
-*/
-
-// $(window).on("popstate", function(){
-//     window.location.replace(lastPage);
-// });

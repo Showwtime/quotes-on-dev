@@ -9,7 +9,6 @@ body{
     color: #fff;
     font-size: 16px;
     line-height: 1.5;
-    font-family: 'exo', sans-serif;
 }
 
 .container{
@@ -24,12 +23,7 @@ h1{
 }
 
 a, a:visited{
-    color: #00cc00;
     text-decoration: none;
-}
-
-a:hover{
-    color: #008200;
 }
 
 
@@ -83,12 +77,6 @@ button{
     padding: .75rem 2.25rem;
     margin-bottom: 2rem;
     font-size: 1rem;
-    font-family: 'exo', sans-serif;
-}
-
-button:hover{
-    color: #008200;
-    border: 2px solid #008200;
 }
 
 .footer-navigation ul{
@@ -146,8 +134,6 @@ button:hover{
 #quote-submission-form input, #quote-submission-form textarea{
     background-color: #222;
     color: #fff;
-    border: 1px solid #00cc00;
-    font-family: 'exo';
 }
 
 #quote-content{
@@ -156,4 +142,8 @@ button:hover{
 
 #quote-source-url{
     margin-bottom: 15px;
+}
+
+.submit-button input{
+    font-size: 3rem;
 }

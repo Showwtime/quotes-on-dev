@@ -257,8 +257,8 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #fff;
+  font-family: "exo", sans-serif;
   font-size: 1rem;
   line-height: 1.5; }
 
@@ -294,11 +294,11 @@ code, kbd, tt, var {
   font-size: .9375rem; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #00cc00;
   cursor: help; }
 
 mark, ins {
-  background: #fff9c0;
+  background: #222;
   text-decoration: none; }
 
 big {
@@ -320,7 +320,7 @@ html {
           box-sizing: inherit; }
 
 body {
-  background: #fff;
+  background: #222;
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote, q {
@@ -372,12 +372,28 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
+  border: 2px solid;
+  border-color: #00cc00;
   border-radius: 3px;
+  background: #222;
   color: rgba(0, 0, 0, 0.8);
-  font-size: .75rem;
+  font-size: 1rem;
   line-height: 1;
   padding: .6rem 1rem .4rem; }
+  button:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    color: #008200;
+    border-color: #008200; }
+  button:active, button:focus,
+  input[type="button"]:active,
+  input[type="button"]:focus,
+  input[type="reset"]:active,
+  input[type="reset"]:focus,
+  input[type="submit"]:active,
+  input[type="submit"]:focus {
+    border-color: #00cc00; }
 
 /* Fields */
 input[type="text"],
@@ -387,7 +403,7 @@ input[type="password"],
 input[type="search"],
 textarea {
   color: #666;
-  border: 1px solid #ccc;
+  border: 1px solid #00cc00;
   border-radius: 3px; }
   input[type="text"]:focus,
   input[type="email"]:focus,
@@ -413,11 +429,11 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
+  color: #00cc00; }
   a:visited {
-    color: purple; }
+    color: #00cc00; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #008200; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -506,7 +522,7 @@ a {
     -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
             box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
-    color: #21759b;
+    color: #00cc00;
     display: block;
     font-size: .875rem;
     font-weight: bold;
@@ -598,8 +614,7 @@ body {
   background: #222;
   color: #fff;
   font-size: 16px;
-  line-height: 1.5;
-  font-family: 'exo', sans-serif; }
+  line-height: 1.5; }
 
 .container {
   margin: 0 auto;
@@ -611,11 +626,7 @@ h1 {
   font-size: 2rem; }
 
 a, a:visited {
-  color: #00cc00;
   text-decoration: none; }
-
-a:hover {
-  color: #008200; }
 
 .logo img {
   width: 300px;
@@ -659,12 +670,7 @@ button {
   border: 2px solid #00cc00;
   padding: .75rem 2.25rem;
   margin-bottom: 2rem;
-  font-size: 1rem;
-  font-family: 'exo', sans-serif; }
-
-button:hover {
-  color: #008200;
-  border: 2px solid #008200; }
+  font-size: 1rem; }
 
 .footer-navigation ul {
   display: -webkit-box;
@@ -714,12 +720,13 @@ button:hover {
 
 #quote-submission-form input, #quote-submission-form textarea {
   background-color: #222;
-  color: #fff;
-  border: 1px solid #00cc00;
-  font-family: 'exo'; }
+  color: #fff; }
 
 #quote-content {
   max-width: 450px; }
 
 #quote-source-url {
   margin-bottom: 15px; }
+
+.submit-button input {
+  font-size: 3rem; }
